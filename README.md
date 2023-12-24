@@ -1,32 +1,33 @@
-# flutter_sliding_up_panel
+# Flutter improved sliding up panel
 
 A sliding up panel widget which can be used to show or hide content, beautiful and simple.
 
+Compatible with a scrollable list.
 
-## demo
+## Demo
 
 <img src="https://raw.githubusercontent.com/JackJonson/flutter_sliding_up_panel/master/screenshots/demo.gif" width="50%">
 
 
 ## Getting Started
 
-## Null safety
+### Import dependencies
+
 ```yaml
 dependencies:
-  flutter_styled_toast: ^2.0.1
+  flutter_sliding_up_panel:
+    git:
+      url: https://github.com/LouisRaverdy/flutter_sliding_up_panel.git
 ```
 
-## Previous version
-```yaml
-dependencies:
-  flutter_sliding_up_panel: ^1.2.1
-```
-
-
+### Import package in your file
 
 ```dart
 import 'package:flutter_sliding_up_panel/flutter_sliding_up_panel.dart';
 ```
+
+
+### Example of a page
 
 ```dart
 Stack(
@@ -143,7 +144,7 @@ Stack(
 ```
 
 
-### SlidingUpPanelWidget param
+### SlidingUpPanelWidget class params
 
 property            | description
 --------------------|----------------------------
@@ -164,6 +165,6 @@ dragCancel          | OnSlidingUpPanelDragCancel (default is null) (Drag cancel 
 dragEnd             | OnSlidingUpPanelDragEnd (default is null) (Drag end listener) 
 
 ## Example
-[example](https://github.com/JackJonson/flutter_sliding_up_panel/blob/master/example/lib/main.dart)
+[See the example page](https://github.com/LouisRaverdy/flutter_sliding_up_panel/blob/master/example/lib/main.dart)
 
 
