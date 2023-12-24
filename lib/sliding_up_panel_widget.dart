@@ -21,7 +21,7 @@ typedef OnSlidingUpPanelDragEnd = void Function(DragEndDetails details);
 
 const Duration _kSlidingUpPanelDuration = Duration(milliseconds: 400);
 const double _kMinFlingVelocity = 100.0;
-const double _kCloseProgressThreshold = 0.2;
+const double _kCloseProgressThreshold = 0.3;
 
 /// Sliding up panel status enum
 enum SlidingUpPanelStatus {
@@ -322,15 +322,18 @@ class _SlidingUpPanelWidgetState extends State<SlidingUpPanelWidget>
       } else if ((SlidingUpPanelStatus.anchored ==
           widget.panelController.status)) {
         expand();
+      } else if (_animationController.value < _kCloseProgressThreshold) {
+        anchor();
       } else {
         expand();
       }
     } else if (details.velocity.pixelsPerSecond.dy > _kMinFlingVelocity) {
       if (SlidingUpPanelStatus.expanded == widget.panelController.status) {
         anchor();
-      } else if ((SlidingUpPanelStatus.anchored ==
-          widget.panelController.status)) {
+      } else if ((SlidingUpPanelStatus.anchored == widget.panelController.status)) {
         collapse();
+      } else if (_animationController.value > _kCloseProgressThreshold) {
+        anchor();
       } else {
         collapse();
       }
